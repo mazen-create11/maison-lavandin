@@ -1,0 +1,57 @@
+/* Écran d'entrée « L'envol » : piloté par intro.js, rien ne s'affiche sans JavaScript. */
+html.intro-on::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: #f8f3e9 url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD//gAQTGF2YzYyLjI4LjEwMAD/2wBDAAgQEBMQExYWFhYWFhoYGhsbGxoaGhobGxsdHR0iIiIdHR0bGx0dICAiIiUmJSMjIiMmJigoKDAwLi44ODpFRVP/xAB+AAACAwEBAAAAAAAAAAAAAAAEAQMFBgAHAQEBAQEAAAAAAAAAAAAAAAAFAwEEEAABAwICBwYHAQEAAAAAAAABAhEDIQBBBDETEmGh0UJRIlKRY3EFMxRygVMj4TIRAAIBAwMFAQAAAAAAAAAAAAEAESEDUWICEjHxoZEyQf/AABEIACAAEgMBIgACEQADEQD/2gAMAwEAAhEDEQA/APV5pFFLjSzjk15QqVO4erV3WDm/iK48uFQnZBUoLKqqS3YwxFdH5uogz31KTGsbMqeoMAR4SR1DTwsfZu/QMVwq/NE3XNTv0vtf99zan1Bb1PqC2OWk+XGthhH9YpAGcAtWhS4O4jQGpTGyMlloxJJ2rZLNpOK8P+mSfcm5Z1oy+yod9ZidVaEOwCaUKT24WPl5zGUlYLKJril61fFuNxtWhxEjpM1ocdnSZXJFHtrZXUcd/tcOqR4z5/5epCYG+XH5nnb2Yf1x8ed9EXdPtk//2Q==") center / cover no-repeat;
+  animation: intro-secours .4s 3s forwards;
+}
+html.intro-montee::before { content: none; }
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow: hidden;
+  background: url("assets/intro/affiche-9x16.jpg") center / cover no-repeat, #f8f3e9 url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD//gAQTGF2YzYyLjI4LjEwMAD/2wBDAAgQEBMQExYWFhYWFhoYGhsbGxoaGhobGxsdHR0iIiIdHR0bGx0dICAiIiUmJSMjIiMmJigoKDAwLi44ODpFRVP/xAB+AAACAwEBAAAAAAAAAAAAAAAEAQMFBgAHAQEBAQEAAAAAAAAAAAAAAAAFAwEEEAABAwICBwYHAQEAAAAAAAABAhEDIQBBBDETEmGh0UJRIlKRY3EFMxRygVMj4TIRAAIBAwMFAQAAAAAAAAAAAAEAESEDUWICEjHxoZEyQf/AABEIACAAEgMBIgACEQADEQD/2gAMAwEAAhEDEQA/APV5pFFLjSzjk15QqVO4erV3WDm/iK48uFQnZBUoLKqqS3YwxFdH5uogz31KTGsbMqeoMAR4SR1DTwsfZu/QMVwq/NE3XNTv0vtf99zan1Bb1PqC2OWk+XGthhH9YpAGcAtWhS4O4jQGpTGyMlloxJJ2rZLNpOK8P+mSfcm5Z1oy+yod9ZidVaEOwCaUKT24WPl5zGUlYLKJril61fFuNxtWhxEjpM1ocdnSZXJFHtrZXUcd/tcOqR4z5/5epCYG+XH5nnb2Yf1x8ed9EXdPtk//2Q==") center / cover no-repeat;
+  transition: opacity .28s cubic-bezier(.4, 0, .2, 1);
+  animation: intro-secours .4s 9s forwards;
+}
+@media (orientation: landscape) {
+  html.intro-on::before { background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD//gAQTGF2YzYyLjI4LjEwMAD/2wBDAAgQEBMQExYWFhYWFhoYGhsbGxoaGhobGxsdHR0iIiIdHR0bGx0dICAiIiUmJSMjIiMmJigoKDAwLi44ODpFRVP/xAB5AAEBAQADAQAAAAAAAAAAAAAFAgQBAAcGAQEBAQEAAAAAAAAAAAAAAAAFAwAEEAABAgMHAwQDAQAAAAAAAAABAgMRACExUQRxEhMyQSKBBbKxM7PRkVIRAAEDAwMFAQAAAAAAAAAAAAEAQQIRAwQhcTEy8NGBUWH/wAARCAASACADASIAAhEAAxEA/9oADAMBAAIRAxEAPwD03eK061ECoETeemf9n5XH+qJZd29kq0HuJJgTcgiScc8pbrjaR2tJVTSroIk3GJqDGNZh3C76EPElSk8jYpaCDUD/AGBUVNbZCiDImgJA1P1MkaBIl9t5O40TctJgVIVdd5snqtJaMBBYqZx+nYFSGjFVqkwIPJKSImEbrbekJ0Yhakk6iEQVpoKED99JThGRL0Yl6fjqO6psDcxBhUlqJvi3H5m2fpRlMt8382fxTyx9CMp2L13dvKrJkhg+WWr3GRHu4LjW23OW8HyOavcZDdsX5+Z6cjm12ygeT7X/2Q=="); }
+  .intro { background-image: url("assets/intro/affiche-16x9.jpg"), url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD//gAQTGF2YzYyLjI4LjEwMAD/2wBDAAgQEBMQExYWFhYWFhoYGhsbGxoaGhobGxsdHR0iIiIdHR0bGx0dICAiIiUmJSMjIiMmJigoKDAwLi44ODpFRVP/xAB5AAEBAQADAQAAAAAAAAAAAAAFAgQBAAcGAQEBAQEAAAAAAAAAAAAAAAAFAwAEEAABAgMHAwQDAQAAAAAAAAABAgMRACExUQRxEhMyQSKBBbKxM7PRkVIRAAEDAwMFAQAAAAAAAAAAAAEAQQIRAwQhcTEy8NGBUWH/wAARCAASACADASIAAhEAAxEA/9oADAMBAAIRAxEAPwD03eK061ECoETeemf9n5XH+qJZd29kq0HuJJgTcgiScc8pbrjaR2tJVTSroIk3GJqDGNZh3C76EPElSk8jYpaCDUD/AGBUVNbZCiDImgJA1P1MkaBIl9t5O40TctJgVIVdd5snqtJaMBBYqZx+nYFSGjFVqkwIPJKSImEbrbekJ0Yhakk6iEQVpoKED99JThGRL0Yl6fjqO6psDcxBhUlqJvi3H5m2fpRlMt8382fxTyx9CMp2L13dvKrJkhg+WWr3GRHu4LjW23OW8HyOavcZDdsX5+Z6cjm12ygeT7X/2Q=="); }
+}
+.intro-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: filter .35s cubic-bezier(.4, 0, .2, 1); }
+.intro-passer {
+  position: absolute;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(18px, env(safe-area-inset-bottom));
+  min-height: 40px;
+  padding: 0 18px;
+  border: 1px solid rgba(91, 67, 144, .22);
+  border-radius: 999px;
+  background: rgba(255, 253, 249, .8);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: #372759;
+  font: 500 .75rem/1 "Figtree", system-ui, sans-serif;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  animation: intro-apparaitre .35s cubic-bezier(.2, .8, .2, 1) 1s both;
+}
+.intro-passer:focus-visible { outline: 2px solid #5b4390; outline-offset: 3px; }
+.intro-fin { pointer-events: none; }
+.intro-fin .intro-passer { animation: none; visibility: hidden; } /* l'animation remplie l'emporterait sur la règle : on la retire */
+.intro-sortie-lente .intro-video { filter: blur(14px); } /* le logo imprimé dans la vidéo se dissout pendant que la copie rejoint l'en-tête */
+.intro-sortie { opacity: 0; }
+.intro-sortie-lente { opacity: 0; transition: opacity .45s cubic-bezier(.4, 0, .2, 1) .12s; }
+html.intro-montee .entete .marque img { opacity: 0; animation: intro-retour .01s 9s forwards; }
+.intro-logo { position: fixed; top: 0; left: 0; z-index: 1001; width: 480px; max-width: none; height: auto; margin: 0; opacity: 0; transform-origin: 0 0; pointer-events: none; will-change: transform; }
+@keyframes intro-secours { to { opacity: 0; visibility: hidden; pointer-events: none; } }
+@keyframes intro-retour { to { opacity: 1; } }
+@keyframes intro-apparaitre { from { opacity: 0; visibility: hidden; transform: translateY(8px); filter: blur(4px); } to { opacity: 1; visibility: visible; transform: none; filter: none; } } /* invisible = ni cliquable ni atteignable au clavier */
+@media (prefers-reduced-motion: reduce) {
+  html.intro-on::before, .intro, .intro-logo { display: none !important; }
+  html.intro-montee .entete .marque img { opacity: 1 !important; }
+}

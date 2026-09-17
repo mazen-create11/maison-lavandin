@@ -1,0 +1,24 @@
+# En-têtes de publication. Lu tel quel par Netlify et par Cloudflare Pages.
+# La compression gzip et brotli est appliquée automatiquement par les deux hébergeurs sur le texte :
+# rien à déclarer ici pour cela. Ce fichier sert au cache et à la sécurité.
+
+# Les pages changent à chaque mise à jour : jamais de cache long, mais une revalidation rapide.
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+
+# Images, polices et variantes : leur nom change quand leur contenu change, on peut les figer un an.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Feuille de style et scripts : leur URL porte une empreinte (?v=…) régénérée à chaque modification,
+# mais une édition à la main pourrait l'oublier. Une journée de cache, pas un an.
+/styles.css
+  Cache-Control: public, max-age=86400
+/site.js
+  Cache-Control: public, max-age=86400
+/mesure.js
+  Cache-Control: public, max-age=86400
